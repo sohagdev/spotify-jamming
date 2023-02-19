@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SearchBar from '../SearchBar/SearchBar'
 import SearchResults from '../SearchResults/SearchResults'
 import Playlist from '../Playlist/Playlist'
+import Spotify from '../../util/Spotify'
 import './App.css'
 
 export class App extends Component {
@@ -62,7 +63,9 @@ export class App extends Component {
     const trackURIs = this.state.playlistTracks.map((track) => track.uri)
   }
   search(term) {
-    console.log(term)
+    Spotify.search(term).then((searchResults) => {
+      this.setState({ searchResults: searchResults })
+    })
   }
   render() {
     return (

@@ -3,7 +3,9 @@ import './SearchBar.css'
 export class SearchBar extends Component {
   constructor(props) {
     super(props)
-
+    this.state = {
+      term: ''
+    }
     this.search = this.search.bind(this)
     this.handleTermChange = this.handleTermChange.bind(this)
   }

@@ -24,7 +24,9 @@ export class SearchBar extends Component {
           placeholder='Enter A Song, Album, or Artist'
           onChange={this.handleTermChange}
         />
-        <button className='SearchButton'>SEARCH</button>
+        <button className='SearchButton' onClick={this.search}>
+          SEARCH
+        </button>
       </div>
     )
   }
